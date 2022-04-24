@@ -49,6 +49,8 @@ jobs:
       - name: Build documentation
         run: |
           docker run  --rm --volume "$PWD:/root/flink" chesnay/flink-ci:java_8_11 bash -c "cd /root/flink && ./.github/workflows/docs.sh"
+      - name: testing
+        run: mvn test-compile -pl "$PWD:/root/flink" flink-libraries/flink-cep -am
       - name: Upload documentation
         uses: burnett01/rsync-deployments@5.2
         with:
