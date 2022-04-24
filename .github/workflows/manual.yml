@@ -16,9 +16,9 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - name: test
+      working-directory: ./
       run: pwd
     - name: Compile code
-      working-directory: ./
       run: mvn test-compile -pl flink-libraries/flink-cep -am
     - name: running regular test
       run:  mvn -pl flink-libraries/flink-cep test -Dtest=org.apache.flink.cep.operator.CEPOperatorTest#testCEPOperatorComparatorEventTime
