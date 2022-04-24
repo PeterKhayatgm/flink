@@ -19,7 +19,7 @@ jobs:
       working-directory: ./
       run: pwd
     - name: test2
-      working-directory: ./flink-libraries
+      working-directory: flink-libraries
       run: pwd
     - name: Compile code
       run: mvn test-compile -pl flink-libraries/flink-cep -am
