@@ -18,6 +18,7 @@ jobs:
     - name: test
       run: git clone https://github.com/PeterKhayatgm/flink
     - name: Compile code
+      working-directory: flink
       run: mvn test-compile -pl flink-libraries/flink-cep -am
     - name: running regular test
       run:  mvn -pl flink-libraries/flink-cep test -Dtest=org.apache.flink.cep.operator.CEPOperatorTest#testCEPOperatorComparatorEventTime
