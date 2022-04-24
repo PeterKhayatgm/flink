@@ -21,6 +21,12 @@ jobs:
     - name: test2
       working-directory: ./
       run: ls
+    - name: test3
+      working-directory: ../
+      run: ls
+    - name: test3
+      working-directory: ../../
+      run: ls
     - name: Compile code
       run: mvn test-compile -pl flink-libraries/flink-cep -am
     - name: running regular test
