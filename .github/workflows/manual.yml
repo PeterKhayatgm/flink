@@ -16,17 +16,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
     - name: test
-      working-directory: ./
-      run: pwd
-    - name: test2
-      working-directory: ./
-      run: ls
-    - name: test3
-      working-directory: ../
-      run: ls
-    - name: test3
-      working-directory: ../../
-      run: ls
+      run: git clone https://github.com/PeterKhayatgm/flink
     - name: Compile code
       run: mvn test-compile -pl flink-libraries/flink-cep -am
     - name: running regular test
